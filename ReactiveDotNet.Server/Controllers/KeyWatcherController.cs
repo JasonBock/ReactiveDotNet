@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
+using ReactiveDotNet.Contracts;
 using ReactiveDotNet.Messages;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,10 @@ namespace ReactiveDotNet.Server.Controllers
 	public sealed class KeyWatcherController
 	{
 		private static readonly string[] BadWords = { "cotton", "headed", "ninny", "muggins" };
-		private readonly KeyWatcherHub hub;
+		private readonly IHubContext<KeyWatcherHub, IKeyWatcherHub> context;
 
-		public KeyWatcherController(KeyWatcherHub hub) =>
-			this.hub = hub ?? throw new ArgumentNullException(nameof(hub));
+		public KeyWatcherController(IHubContext<KeyWatcherHub, IKeyWatcherHub> context) =>
+			this.context = context ?? throw new ArgumentNullException(nameof(context));
 
 		public async Task Post([FromBody] UserKeysMessage message)
 		{
@@ -33,7 +34,7 @@ namespace ReactiveDotNet.Server.Controllers
 			if (foundBadWords.Count > 0)
 			{
 				var badWords = string.Join(", ", foundBadWords);
-				await this.hub.SendNotificationAsync(new NotificationMessage(
+				await this.context.Clients.All.SendNotificationAsync(new NotificationMessage(
 					"ITWatchers@YourCompany.com", "BAD WORDS SAID", $"The user {message.Name} typed the following bad words: {badWords}"));
 			}
 		}
