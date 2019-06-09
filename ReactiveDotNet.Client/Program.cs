@@ -51,9 +51,25 @@ namespace ReactiveDotNet.Client
 				{
 					Console.WriteLine();
 					Console.WriteLine(
-						$"{nameof(ReactiveDotNet.Client.Extensions.HubConnectionExtensions.Observe)} {nameof(IKeyWatcherHub.SendNotificationAsync)} received: {message.Message}");
+						$"{nameof(Extensions.HubConnectionExtensions.Observe)} {nameof(IKeyWatcherHub.SendNotificationAsync)} received: {message.Message}");
 					Console.WriteLine();
 				});
+
+			var connectionPolicy = Policy.Handle<Exception>(e =>
+			{
+				Console.WriteLine($"Could not reconnect, sorry!");
+				return true;
+			}).WaitAndRetryAsync(
+				Program.RetryCount, retryAttempt =>
+				{
+					Console.WriteLine($"Attempt {retryAttempt} of {Program.RetryCount} to reconnect...");
+					return Program.Retry;
+				});
+
+			connection.Closed += async (error) =>
+			{
+				await connectionPolicy.ExecuteAsync(async () => await connection.StartAsync());
+			};
 
 			await connection.StartAsync();
 
