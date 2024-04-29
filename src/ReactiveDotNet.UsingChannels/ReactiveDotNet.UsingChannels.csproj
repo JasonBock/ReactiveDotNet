@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Collatz" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" />
+		<PackageReference Include="Spackle" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\ReactiveDotNet.Core\ReactiveDotNet.Core.csproj" />
+	</ItemGroup>
+</Project>

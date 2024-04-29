@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactiveDotNet", "ReactiveDotNet\ReactiveDotNet.csproj", "{BE34B4B9-5E52-48AA-9AF6-9371B04C9D9A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6450FD1E-423B-4E7A-91F3-12C128DC8535}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactiveDotNet.UsingChannels", "ReactiveDotNet.UsingChannels\ReactiveDotNet.UsingChannels.csproj", "{D86C9120-EF2C-4D7A-819A-3144C8EE625A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveDotNet.Api", "ReactiveDotNet.Api\ReactiveDotNet.Api.csproj", "{6C5D7556-432B-4063-92CE-4FCA25031E83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveDotNet.Client", "ReactiveDotNet.Client\ReactiveDotNet.Client.csproj", "{ABDE76A1-7106-400F-9121-3F5CF9DF36CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveDotNet.Core", "ReactiveDotNet.Core\ReactiveDotNet.Core.csproj", "{3C4E4D9C-B10E-4718-8D56-B79E9B5DCFF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE34B4B9-5E52-48AA-9AF6-9371B04C9D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE34B4B9-5E52-48AA-9AF6-9371B04C9D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE34B4B9-5E52-48AA-9AF6-9371B04C9D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE34B4B9-5E52-48AA-9AF6-9371B04C9D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D86C9120-EF2C-4D7A-819A-3144C8EE625A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D86C9120-EF2C-4D7A-819A-3144C8EE625A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D86C9120-EF2C-4D7A-819A-3144C8EE625A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D86C9120-EF2C-4D7A-819A-3144C8EE625A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C5D7556-432B-4063-92CE-4FCA25031E83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C5D7556-432B-4063-92CE-4FCA25031E83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C5D7556-432B-4063-92CE-4FCA25031E83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C5D7556-432B-4063-92CE-4FCA25031E83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABDE76A1-7106-400F-9121-3F5CF9DF36CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABDE76A1-7106-400F-9121-3F5CF9DF36CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABDE76A1-7106-400F-9121-3F5CF9DF36CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABDE76A1-7106-400F-9121-3F5CF9DF36CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C4E4D9C-B10E-4718-8D56-B79E9B5DCFF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C4E4D9C-B10E-4718-8D56-B79E9B5DCFF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C4E4D9C-B10E-4718-8D56-B79E9B5DCFF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C4E4D9C-B10E-4718-8D56-B79E9B5DCFF3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {900C7FE5-1258-4DA8-A97F-06AE3044AE5C}
+	EndGlobalSection
+EndGlobal

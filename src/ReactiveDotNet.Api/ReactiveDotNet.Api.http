@@ -1,0 +1,9 @@
+@ReactiveDotNet.Api_HostAddress = http://localhost:5079
+
+POST {{ReactiveDotNet.Api_HostAddress}}/api
+Content-Type: application/json
+
+{
+  "start": 2,
+  "end": 20000000
+}
