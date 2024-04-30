@@ -18,12 +18,7 @@ connection.Observe<SequenceStatistics>(nameof(ISequenceHub.PublishSequenceAsync)
 	.Skip(30)
 	.Delay(TimeSpan.FromSeconds(3))
 	.Where(_ => _.Length % 2 == 0)
-	.Subscribe(message =>
-	{
-		Console.WriteLine();
-		Console.WriteLine($"{nameof(ISequenceHub.PublishSequenceAsync)} received: {message}");
-		Console.WriteLine();
-	});
+	.Subscribe(message => Console.WriteLine($"{nameof(ISequenceHub.PublishSequenceAsync)} received: {message}"));
 
 await connection.StartAsync();
 
