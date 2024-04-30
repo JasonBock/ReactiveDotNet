@@ -41,7 +41,7 @@ public sealed class LongestSequenceEnumerable
 
 				if (this.statistic.Length < sequence.Length)
 				{
-					this.statistic = new SequenceStatistics(this.currentIndex, sequence.Length);
+					this.statistic = new SequenceStatistics((int)this.currentIndex, sequence.Length);
 					this.currentIndex++;
 					return true;
 				}

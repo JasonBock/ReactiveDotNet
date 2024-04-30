@@ -24,7 +24,7 @@ internal sealed class SequenceStatisticPublisherSerivce
 
 			if (currentStatistic.Length < sequence.Length)
 			{
-				currentStatistic = new SequenceStatistics(i, sequence.Length);
+				currentStatistic = new SequenceStatistics((int)i, sequence.Length);
 				await this.writer.WriteAsync(currentStatistic, stoppingToken);
 				stoppingToken.ThrowIfCancellationRequested();
 			}

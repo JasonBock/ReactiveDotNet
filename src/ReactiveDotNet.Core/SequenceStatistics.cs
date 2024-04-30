@@ -2,4 +2,4 @@
 
 namespace ReactiveDotNet.Core;
 
-public sealed record SequenceStatistics(BigInteger Start, int Length);
+public sealed record SequenceStatistics(int Start, int Length);

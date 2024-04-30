@@ -31,7 +31,7 @@ public sealed class SequenceService
 
 				if (statistic.Length < sequence.Length)
 				{
-					statistic = new SequenceStatistics(i, sequence.Length);
+					statistic = new SequenceStatistics((int)i, sequence.Length);
 					await this.hub.Clients.All.PublishSequenceAsync(statistic);
 				}
 			}

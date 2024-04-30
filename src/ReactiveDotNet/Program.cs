@@ -20,7 +20,7 @@ static void FindLongestSequence(Range<BigInteger> range)
 
 		if (currentStatistic.Length < sequence.Length)
 		{
-			currentStatistic = new SequenceStatistics(i, sequence.Length);
+			currentStatistic = new SequenceStatistics((int)i, sequence.Length);
 			Console.WriteLine(currentStatistic);
 		}
 	}
@@ -40,7 +40,7 @@ static void FindLongestSequenceWithCallback(Range<BigInteger> range, Action<Sequ
 
 		if (currentStatistic.Length < sequence.Length)
 		{
-			currentStatistic = new SequenceStatistics(i, sequence.Length);
+			currentStatistic = new SequenceStatistics((int)i, sequence.Length);
 			newLongSequence(currentStatistic);
 		}
 	}
@@ -89,7 +89,7 @@ static void FindLongestSequenceWithEumerationSimplified(Range<BigInteger> range)
 
 			if (currentStatistic.Length < sequence.Length)
 			{
-				currentStatistic = new SequenceStatistics(i, sequence.Length);
+				currentStatistic = new SequenceStatistics((int)i, sequence.Length);
 				yield return currentStatistic;
 			}
 		}
@@ -115,7 +115,7 @@ static async Task FindLongestSequenceWithEumerationAsync(Range<BigInteger> range
 
 			if (currentStatistic.Length < sequence.Length)
 			{
-				currentStatistic = new SequenceStatistics(i, sequence.Length);
+				currentStatistic = new SequenceStatistics((int)i, sequence.Length);
 				Console.WriteLine(Environment.CurrentManagedThreadId);
 				return (true, currentStatistic);
 			}

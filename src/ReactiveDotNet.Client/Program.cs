@@ -14,13 +14,6 @@ var connection = new HubConnectionBuilder()
 	.WithUrl(Shared.ServerUrl)
 	.Build();
 
-connection.On<SequenceStatistics>(nameof(ISequenceHub.PublishSequenceAsync), data =>
-{
-	Console.WriteLine();
-	Console.WriteLine($"On: {nameof(ISequenceHub.PublishSequenceAsync)} received: {data}");
-	Console.WriteLine();
-});
-
 connection.Observe<SequenceStatistics>(nameof(ISequenceHub.PublishSequenceAsync))
 	.Skip(30)
 	.Delay(TimeSpan.FromSeconds(3))
@@ -33,4 +26,7 @@ connection.Observe<SequenceStatistics>(nameof(ISequenceHub.PublishSequenceAsync)
 	});
 
 await connection.StartAsync();
+
+Console.WriteLine("Waiting for signals...");
+
 await builder.Build().RunAsync();

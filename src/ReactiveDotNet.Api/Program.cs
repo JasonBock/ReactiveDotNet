@@ -28,4 +28,6 @@ app.MapPost("/api", async ([FromBody] SequenceStatisticsPostMessage statistics, 
 
 app.MapHub<SequenceHub>("/sequenceHub");
 
+Console.WriteLine("Waiting for calls...");
+
 await app.RunAsync();

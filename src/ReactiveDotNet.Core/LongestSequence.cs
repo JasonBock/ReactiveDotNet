@@ -19,7 +19,7 @@ public sealed class LongestSequence
 
 			if (this.Statistic.Length < sequence.Length)
 			{
-				this.Statistic = new SequenceStatistics(i, sequence.Length);
+				this.Statistic = new SequenceStatistics((int)i, sequence.Length);
 			}
 		}
 	}
