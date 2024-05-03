@@ -6,7 +6,7 @@ using SystemTimer = System.Timers.Timer;
 
 var range = new Range<BigInteger>(2, 20_000_000);
 
-FindLongestSequence(range);
+//FindLongestSequence(range);
 
 static void FindLongestSequence(Range<BigInteger> range)
 {
@@ -61,11 +61,11 @@ static void FindLongestSequenceWithTimer(Range<BigInteger> range)
 	sequenceFinder.Calculate(range);
 }
 
-//FindLongestSequenceWithEumeration(range);
+//FindLongestSequenceWithEnumeration(range);
 
-static void FindLongestSequenceWithEumeration(Range<BigInteger> range)
+static void FindLongestSequenceWithEnumeration(Range<BigInteger> range)
 {
-	Console.WriteLine(nameof(FindLongestSequenceWithEumeration));
+	Console.WriteLine(nameof(FindLongestSequenceWithEnumeration));
 
 	var sequences = new LongestSequenceEnumerable(range);
 
@@ -75,9 +75,9 @@ static void FindLongestSequenceWithEumeration(Range<BigInteger> range)
 	}
 }
 
-//FindLongestSequenceWithEumerationSimplified(range);
+//FindLongestSequenceWithEnumerationSimplified(range);
 
-static void FindLongestSequenceWithEumerationSimplified(Range<BigInteger> range)
+static void FindLongestSequenceWithEnumerationSimplified(Range<BigInteger> range)
 {
 	static IEnumerable<SequenceStatistics> GetSequenceStatistics(Range<BigInteger> range)
 	{
@@ -95,7 +95,7 @@ static void FindLongestSequenceWithEumerationSimplified(Range<BigInteger> range)
 		}
 	}
 
-	Console.WriteLine(nameof(FindLongestSequenceWithEumerationSimplified));
+	Console.WriteLine(nameof(FindLongestSequenceWithEnumerationSimplified));
 
 	foreach (var sequence in GetSequenceStatistics(range))
 	{
@@ -103,9 +103,9 @@ static void FindLongestSequenceWithEumerationSimplified(Range<BigInteger> range)
 	}
 }
 
-//await FindLongestSequenceWithEumerationAsync(range);
+await FindLongestSequenceWithEnumerationAsync(range);
 
-static async Task FindLongestSequenceWithEumerationAsync(Range<BigInteger> range)
+static async Task FindLongestSequenceWithEnumerationAsync(Range<BigInteger> range)
 {
 	static (bool, SequenceStatistics?) GetNextSequenceStatistic(BigInteger index, BigInteger end, SequenceStatistics currentStatistic)
 	{
@@ -148,7 +148,7 @@ static async Task FindLongestSequenceWithEumerationAsync(Range<BigInteger> range
 		}
 	}
 
-	Console.WriteLine(nameof(FindLongestSequenceWithEumerationAsync));
+	Console.WriteLine(nameof(FindLongestSequenceWithEnumerationAsync));
 
 	await foreach (var statistic in GetSequenceStatisticsAsync(range))
 	{
